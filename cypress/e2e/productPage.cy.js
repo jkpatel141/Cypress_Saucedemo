@@ -30,6 +30,6 @@ describe("Verify the products functionality", () => {
      productTest.verifyCartCount(1)
      productTest.addItemToCart(data.products[1].name)
      productTest.verifyCartCount(2)
-    })
+    }) 
   }); 
 }); 
