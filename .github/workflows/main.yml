@@ -1,14 +1,29 @@
-            - name: Algorithmia CI/CD
-  # You may pin to the exact commit or the version.
-  # uses: algorithmiaio/algorithmia-ci-action@2c1fda97fe5d0288cd77cf7f2ff28c08730ad00b
-  uses: algorithmiaio/algorithmia-ci-action@1.2.4
-  with:
-    # Your algorithm management capable Algorithmia API key
-    api_key: 
-    # The API address for the Algorithmia Cluster you wish to connect to
-    api_address: # optional, default is https://api.algorithmia.com
-    # identifier to describe how to promote this release
-    version_schema: # optional, default is minor
-    # directory name for the local project stored in /github/workspace due to an "actions/checkout" command
-    path: 
-          
+name: Cypress Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Cypress tests
+        uses: cypress-io/github-action@v6
+        with:
+          browser: chrome
+          headless: true
