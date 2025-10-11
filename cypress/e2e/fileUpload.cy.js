@@ -10,7 +10,7 @@ describe("To check the file upload and download", () => {
     cy.task("deleteFile", filePath);
   });
 
-  it.only("To download file", () => {
+  it("To download file", () => {
     cy.visit("https://the-internet.herokuapp.com/download");
     const fileUpload = `report_file_${Date.now()}.pdf`;
     const filePath = `cypress/fixtures/${fileUpload}`;
