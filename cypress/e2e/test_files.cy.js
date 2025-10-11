@@ -1,18 +1,18 @@
 /// <reference types="cypress"/>
 
 describe("To test all window actions", () => {
-  it("Open file in a different tab  ", () => {
+  it.only("To select the value from the drop down", () => {
     cy.visit("https://playground.bondaracademy.com/pages/iot-dashboard");
 
     cy.contains("Modal & Overlays").click();
     cy.contains("Toastr").click();
 
-    cy.get("button.select-button").click({ multiple: true });
+    cy.get("button.select-button", {timeout : 10000}).click({ multiple: true });
     cy.get("nb-option").contains("top-right").click();
     cy.get("button.select-button").contains("top-right");
   });
 
-  it("Open file in a different tab  ", () => {
+  it("Change the theme of website from down  ", () => {
     cy.visit("https://playground.bondaracademy.com/pages/iot-dashboard");
     //cy.get('button.select-button.bottom').click({multiple:true});
 
@@ -23,7 +23,7 @@ describe("To test all window actions", () => {
       });
   });
 
-  it("Open file in a different tab  ", () => {
+  it("Verify the window:alert in browser", () => {
     cy.visit("https://demoqa.com/alerts");
     cy.get("#alertButton");
 
@@ -34,7 +34,7 @@ describe("To test all window actions", () => {
     cy.get("#alertButton").click();
   });
 
-  it("Open file in a different tab  ", () => {
+  it("Verify the window:confirm in browser", () => {
     cy.visit("https://demoqa.com/alerts");
 
     cy.on("window:confirm", (text) => {
@@ -45,7 +45,7 @@ describe("To test all window actions", () => {
     //take123
     //Test@2025
   });
-  it.only("Open file in a different tab  ", () => {
+  it("Login to the account and intercept wait for the same", () => {
 
     cy.intercept('POST','**Account/v1/Login').as('login');
     cy.visit("https://demoqa.com/login");
