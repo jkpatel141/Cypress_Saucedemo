@@ -4,7 +4,7 @@ const fs = require("fs");
 
 module.exports = defineConfig({
   e2e: {
-  //  baseUrl: 'https://demoqa.com', //"https://www.saucedemo.com/",
+    baseUrl: "https://www.saucedemo.com/",
     setupNodeEvents(on, config) {
       on("task", {
         // Task 1: Delete file
