@@ -9,6 +9,7 @@ describe("To check the file upload and download", () => {
     cy.get('input[type="file"]').attachFile(fileUpload);
     cy.task("deleteFile", filePath);
   });
+  
   it.only("To download file", () => {
     cy.visit("https://the-internet.herokuapp.com/download");
     const fileUpload = `report_file_${Date.now()}.pdf`;

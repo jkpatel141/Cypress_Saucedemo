@@ -4,7 +4,7 @@ const fs = require("fs");
 
 module.exports = defineConfig({
   e2e: {
-    baseUrl: "https://www.saucedemo.com/",
+  //  baseUrl: 'https://demoqa.com', //"https://www.saucedemo.com/",
     setupNodeEvents(on, config) {
       on("task", {
         // Task 1: Delete file
@@ -23,4 +23,13 @@ module.exports = defineConfig({
       return config;
     },
   },
+  viewportWidth: 1280,
+  viewportHeight: 720,
+  reporter:'mochawesome',
+  reporterOptions:{
+    reportDir: 'Cypress/reports',
+    overwrite: false,
+    html: true,
+    json: true
+  }
 });
