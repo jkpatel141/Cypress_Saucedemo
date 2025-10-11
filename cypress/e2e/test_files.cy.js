@@ -1,7 +1,7 @@
 /// <reference types="cypress"/>
 
 describe("To test all window actions", () => {
-  it.only("To select the value from the drop down", () => {
+  it("To select the value from the drop down", () => {
     cy.visit("https://playground.bondaracademy.com/pages/iot-dashboard");
 
     cy.contains("Modal & Overlays").click();
