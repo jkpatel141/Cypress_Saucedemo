@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-11-11T14:11:58.659Z",
+    "end": "2025-11-11T14:12:00.617Z",
+    "duration": 1958,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9d52ffd8-43f8-4e0e-b490-07fa9b9461ed",
+      "title": "",
+      "fullFile": "cypress\\e2e\\apitesting.cy.js",
+      "file": "cypress\\e2e\\apitesting.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "baa38426-7db5-44d0-80ca-e523d0970a9e",
+          "title": "To check the api",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Post and get the token",
+              "fullTitle": "To check the api Post and get the token",
+              "timedOut": null,
+              "duration": 1893,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'POST',\n  url: 'https://dummyjson.com/auth/login',\n  body: {\n    \"username\": \"michaelw\",\n    \"password\": \"michaelwpass\",\n    \"email\": \"michael.williams@x.dummyjson.com\"\n  }\n}).then(response => {\n  expect(response.status).to.eq(201);\n  // expect(response.status).to.eq(200);\n  // const data = JSON.stringify(response.body.comments[0])\n  // expect(response.duration).to.below(1000)\n  // expect(response.body.comments[0]).to.not.null \n  // expect(response.body.comments).to.have.length.above(29)\n  // cy.log(data)\n});",
+              "err": {
+                "message": "AssertionError: expected 200 to equal 201",
+                "estack": "AssertionError: expected 200 to equal 201\n    at Context.eval (webpack:///./cypress/e2e/apitesting.cy.js:13:39)\n    at getRet (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:121618:20)\n    at tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:121629:66)\n    at Context.then (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:121880:21)",
+                "diff": "- 200\n+ 201\n"
+              },
+              "uuid": "344034d5-d8de-4440-aab6-6fd3dd187726",
+              "parentUUID": "baa38426-7db5-44d0-80ca-e523d0970a9e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "344034d5-d8de-4440-aab6-6fd3dd187726"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 1893,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "Cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.0"
+    }
+  }
+}
